@@ -1,0 +1,49 @@
+<!-- FilteredProducts.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- meta data and CSS links omitted for brevity -->
+</head>
+<body>
+<section id="home" class="welcome-hero">
+    <!-- existing content omitted for brevity -->
+
+    <!-- Featured Cars Section -->
+    <section id="featured-cars" class="featured-cars">
+        <div class="container">
+            <div class="section-header">
+                <h2>Filtered Cars</h2>
+            </div><!--/.section-header-->
+            <div class="featured-cars-content">
+                <div class="row">
+                    {% for car in data %}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-featured-cars">
+                            <div class="featured-img-box">
+                                <img src="{{ car.ProductImage.url }}" alt="{{ car.ProductName }}"
+                                     class="fixed-img-size">
+                            </div>
+                            <div class="featured-cars-txt">
+                                <h2><a href="{% url 'Single_Product' proid=car.id %}">{{ car.ProductName }}</a></h2>
+                                <h3>${{ car.Price }}</h3>
+                                <p>{{ car.Description }}</p>
+                                <a href="{% url 'Single_Product' proid=car.id %}">
+                                    <button type="button" class="btn btn-primary">Details</button>
+                                </a>
+                                <button type="button" class="btn btn-danger float-right">
+                                    <i class="fas fa-heart"></i> Favorite
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div><!--/.container-->
+        </div>
+    </section>
+</section>
+<!-- JavaScript links omitted for brevity -->
+</body>
+</html>

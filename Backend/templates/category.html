@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<div style="margin-top: 50px;">
+    <div class="col-xl">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-6">Enter Categories</h5>
+                <!--            <small class="text-muted float-end">Default label</small>-->
+            </div>
+
+            <div class="card-body">
+                <form method="post" action="{% url 'categorysave' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label" for="basic-default-fullname">Category Name</label>
+                        <input type="text" name="cname" class="form-control" id="basic-default-fullname"
+                               placeholder="Category Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleTextarea1">Description</label>
+                        <textarea class="form-control" name="description" id="exampleTextarea1"
+                                  placeholder="Description"
+                                  rows="4"></textarea>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label>Upload Category Image</label> <br><br>
+                        <input type="file" name="cimage" class="file-upload-default">
+                        <br><br>
+                        <!--                    <div class="input-group col-xs-12">-->
+                        <!--                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">-->
+                        <!--                    </div>-->
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{% if messages %}
+{% for i in messages %}
+{% if i.tags == 'warning' %}
+<script>
+    swal('{{i}}', '', 'warning')
+</script>
+{% elif i.tags == 'error' %}
+<script>
+    swal('{{i}}', '', 'error')
+</script>
+{% elif i.tags == 'info' %}
+<script>
+    swal('{{i}}', '', 'info')
+</script>
+{% else %}
+<script>
+    swal('{{i}}', '', 'success')
+</script>
+{% endif %}
+{% endfor %}
+{% endif %}
+</body>
+</html>
+{% endblock %}

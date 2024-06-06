@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<div style="margin-top: 50px;">
+    <div class="col-xl">
+    <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-6">Enter Products</h5>
+<!--            <small class="text-muted float-end">Default label</small>-->
+        </div>
+
+        <div class="card-body">
+            <form method="post" action="{% url 'productsave' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                        <label for="defaultSelect" class="form-label">Select Category</label>
+                        <select id="defaultSelect" name="catname" class="form-select">
+                          <option>Select</option>
+                            {% for d in cat %}
+                            <option>{{d.CategoryName}}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="basic-default-fullname">Product Name</label>
+                    <input type="text" name="proname" class="form-control" id="basic-default-fullname"
+                           placeholder="Product Name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="basic-default-fullname">Price</label>
+                    <input type="text" name="price" class="form-control" id="basic-default-fullname"
+                           placeholder="Price">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleTextarea1">Description</label>
+                    <textarea class="form-control" name="description" id="exampleTextarea1" placeholder="Description"
+                              rows="4"></textarea>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label>Upload Product Image</label> <br><br>
+                    <input type="file" name="proimage" class="file-upload-default">
+                    <br><br>
+<!--                    <div class="input-group col-xs-12">-->
+<!--                        <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">-->
+<!--                    </div>-->
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}
