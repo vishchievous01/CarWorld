@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <!-- meta data -->
     <meta charset="utf-8">
@@ -9,8 +10,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!--font-family-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
 
@@ -18,7 +20,7 @@
     <title>CarWorld</title>
 
     <!-- For favicon png -->
-    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}"/>
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
 
     <!--font-awesome.min.css-->
     <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
@@ -61,440 +63,449 @@
 
     <style>
         .fixed-img-size {
-          width: 100%;
-          height: 230px;
-          object-fit: cover;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
         }
+
         .card {
-          margin-bottom: 20px;
+            margin-bottom: 20px;
         }
     </style>
 
 </head>
+
 <body>
-<section id="home" class="welcome-hero">
+    <section id="home" class="welcome-hero">
 
-    <!-- top-area Start -->
-    <div class="top-area">
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
-                 data-minus-value-mobile="55" data-speed="1000">
+        <!-- top-area Start -->
+        <div class="top-area">
+            <div class="header-area">
+                <!-- Start Navigation -->
+                <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+                    data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
 
-                <div class="container">
+                    <div class="container">
 
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="{% url 'homepage' %}">CarWorld<span></span></a>
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#navbar-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="{% url 'homepage' %}">CarWorld<span></span></a>
 
-                    </div><!--/.navbar-header-->
-                    <!-- End Header Navigation -->
+                        </div><!--/.navbar-header-->
+                        <!-- End Header Navigation -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="{% url 'homepage' %}">home</a></li>
-                            <li><a href="{% url 'aboutpage' %}">about</a></li>
-                            <li class="scroll active"><a href="{% url 'carspage' %}">featured cars</a></li>
-                            <li><a href="#new-cars">new cars</a></li>
-                            <li><a href="#brand">brands</a></li>
-                            <li><a href="{% url 'contactpage' %}">contact</a></li>
-                            <li><a href="#">Register/login</a></li>
-                        </ul><!--/.nav -->
-                    </div><!-- /.navbar-collapse -->
-                </div><!--/.container-->
-            </nav><!--/nav-->
-            <!-- End Navigation -->
-        </div><!--/.header-area-->
-        <div class="clearfix"></div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li><a href="{% url 'homepage' %}">home</a></li>
+                                <li><a href="{% url 'aboutpage' %}">about</a></li>
+                                <li class="scroll active"><a href="{% url 'carspage' %}">featured cars</a></li>
+                                <li><a href="#new-cars">new cars</a></li>
+                                <li><a href="#brand">brands</a></li>
+                                <li><a href="{% url 'contactpage' %}">contact</a></li>
+                                {% if request.session.Username %}
+                                <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a>
+                                </li>
+                                {% else %}
+                                <li><a href="{% url 'registration_page' %}">Register/Login</a></li>
+                                {% endif %}
+                            </ul><!--/.nav -->
+                        </div><!-- /.navbar-collapse -->
+                    </div><!--/.container-->
+                </nav><!--/nav-->
+                <!-- End Navigation -->
+            </div><!--/.header-area-->
+            <div class="clearfix"></div>
 
-    </div><!-- /.top-area-->
-    <!-- top-area End -->
+        </div><!-- /.top-area-->
+        <!-- top-area End -->
 
-    <div class="container">
-        <div class="welcome-hero-txt">
-            <h2>Hasslefree Process | 4 Years Warranty | Reliability</h2>
-            <p>
-                Here is the updated list on latest arrivals.!
-            </p>
-            <!--					<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>-->
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2>Hasslefree Process | 4 Years Warranty | Reliability</h2>
+                <p>
+                    Here is the updated list on latest arrivals.!
+                </p>
+                <!--					<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>-->
+            </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="model-search-content">
-                    <div class="row">
-                        <div class="col-md-offset-1 col-md-2 col-sm-12">
-                            <div class="single-model-search">
-                                <h2>select year</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="model-search-content">
+                        <div class="row">
+                            <div class="col-md-offset-1 col-md-2 col-sm-12">
+                                <div class="single-model-search">
+                                    <h2>select year</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
 
-                                        <option value="default">year</option><!-- /.option-->
+                                            <option value="default">year</option><!-- /.option-->
 
-                                        <option value="2018">2018</option><!-- /.option-->
+                                            <option value="2018">2018</option><!-- /.option-->
 
-                                        <option value="2017">2017</option><!-- /.option-->
-                                        <option value="2016">2016</option><!-- /.option-->
+                                            <option value="2017">2017</option><!-- /.option-->
+                                            <option value="2016">2016</option><!-- /.option-->
 
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
+                                <div class="single-model-search">
+                                    <h2>body style</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
+
+                                            <option value="default">style</option><!-- /.option-->
+
+                                            <option value="sedan">sedan</option><!-- /.option-->
+
+                                            <option value="van">van</option><!-- /.option-->
+                                            <option value="roadster">roadster</option><!-- /.option-->
+
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
                             </div>
-                            <div class="single-model-search">
-                                <h2>body style</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
+                            <div class="col-md-offset-1 col-md-2 col-sm-12">
+                                <div class="single-model-search">
+                                    <h2>select make</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
 
-                                        <option value="default">style</option><!-- /.option-->
+                                            <option value="default">make</option><!-- /.option-->
 
-                                        <option value="sedan">sedan</option><!-- /.option-->
+                                            <option value="toyota">toyota</option><!-- /.option-->
 
-                                        <option value="van">van</option><!-- /.option-->
-                                        <option value="roadster">roadster</option><!-- /.option-->
+                                            <option value="holden">holden</option><!-- /.option-->
+                                            <option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
 
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
+                                <div class="single-model-search">
+                                    <h2>car condition</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
+
+                                            <option value="default">condition</option><!-- /.option-->
+
+                                            <option value="something">something</option><!-- /.option-->
+
+                                            <option value="something">something</option><!-- /.option-->
+                                            <option value="something">something</option><!-- /.option-->
+
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-2 col-sm-12">
-                            <div class="single-model-search">
-                                <h2>select make</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
+                            <div class="col-md-offset-1 col-md-2 col-sm-12">
+                                <div class="single-model-search">
+                                    <h2>select model</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
 
-                                        <option value="default">make</option><!-- /.option-->
+                                            <option value="default">model</option><!-- /.option-->
 
-                                        <option value="toyota">toyota</option><!-- /.option-->
+                                            <option value="kia-rio">kia-rio</option><!-- /.option-->
 
-                                        <option value="holden">holden</option><!-- /.option-->
-                                        <option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
+                                            <option value="mitsubishi">mitsubishi</option><!-- /.option-->
+                                            <option value="ford">ford</option><!-- /.option-->
 
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
+                                <div class="single-model-search">
+                                    <h2>select price</h2>
+                                    <div class="model-select-icon">
+                                        <select class="form-control">
+
+                                            <option value="default">price</option><!-- /.option-->
+
+                                            <option value="$0.00">$0.00</option><!-- /.option-->
+
+                                            <option value="$0.00">$0.00</option><!-- /.option-->
+                                            <option value="$0.00">$0.00</option><!-- /.option-->
+
+                                        </select><!-- /.select-->
+                                    </div><!-- /.model-select-icon -->
+                                </div>
                             </div>
-                            <div class="single-model-search">
-                                <h2>car condition</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
-
-                                        <option value="default">condition</option><!-- /.option-->
-
-                                        <option value="something">something</option><!-- /.option-->
-
-                                        <option value="something">something</option><!-- /.option-->
-                                        <option value="something">something</option><!-- /.option-->
-
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
-                            </div>
-                        </div>
-                        <div class="col-md-offset-1 col-md-2 col-sm-12">
-                            <div class="single-model-search">
-                                <h2>select model</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
-
-                                        <option value="default">model</option><!-- /.option-->
-
-                                        <option value="kia-rio">kia-rio</option><!-- /.option-->
-
-                                        <option value="mitsubishi">mitsubishi</option><!-- /.option-->
-                                        <option value="ford">ford</option><!-- /.option-->
-
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
-                            </div>
-                            <div class="single-model-search">
-                                <h2>select price</h2>
-                                <div class="model-select-icon">
-                                    <select class="form-control">
-
-                                        <option value="default">price</option><!-- /.option-->
-
-                                        <option value="$0.00">$0.00</option><!-- /.option-->
-
-                                        <option value="$0.00">$0.00</option><!-- /.option-->
-                                        <option value="$0.00">$0.00</option><!-- /.option-->
-
-                                    </select><!-- /.select-->
-                                </div><!-- /.model-select-icon -->
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-12">
-                            <div class="single-model-search text-center">
-                                <button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
-                                    search
-                                </button>
+                            <div class="col-md-2 col-sm-12">
+                                <div class="single-model-search text-center">
+                                    <button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
+                                        search
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-</section>
-<div>
-    <section id="featured-cars" class="featured-cars">
-        <div class="container">
-            <div class="section-header">
-                <h2>All Cars</h2>
-            </div><!--/.section-header-->
-            <div class="featured-cars-content">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="single-featured-cars">
-                            <div class="featured-img-box">
-                            </div>
-                            <!--                            <div class="featured-cars-txt">-->
-                            <!--                                <h2><a href="#">BMW 6-series gran coupe</a></h2>-->
-                            <!--                                <h3>$89,395</h3>-->
-                            <!--                                <p>-->
-                            <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                            <!--                                    adipisci velit, sed quia non.-->
-                            <!--                                </p>-->
-                            <!--                            </div>-->
-
-                            <div class="container">
-                                <div class="row">
-                                    {% for i in cardata %}
-                                    <div class="col-md-4">
-                                        <div class="card">
-                                            <img src="{{i.ProductImage.url}}" class="card-img-top fixed-img-size"
-                                                 alt="{{i.ProductName}}">
-                                            <div class="card-body">
-                                                <h5 class="card-title">{{i.ProductName}}</h5>
-                                                <!-- Uncomment the following lines if needed -->
-                                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-                                                <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                                                <a href="{% url 'Single_Product' proid=i.id %}">
-                                                    <button type="button" class="btn btn-primary">Details</button>
-                                                </a>
-                                                <button type="button" class="btn btn-danger float-right"><i
-                                                        class="fas fa-heart"></i> Favorite
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc2.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">chevrolet camaro <span>wmv20</span></a></h2>-->
-                    <!--                                <h3>$66,575</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc3.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">lamborghini <span>v520</span></a></h2>-->
-                    <!--                                <h3>$125,250</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc4.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">audi <span> a3</span> sedan</a></h2>-->
-                    <!--                                <h3>$95,500</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                </div>-->
-                    <!--                <div class="row">-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc4.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">infiniti <span>z5</span></a></h2>-->
-                    <!--                                <h3>$36,850</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc5.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">porsche <span>718</span> cayman</a></h2>-->
-                    <!--                                <h3>$48,500</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc7.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#"><span>bmw 8-</span>series coupe</a></h2>-->
-                    <!--                                <h3>$56,000</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
-                    <!--                        <div class="single-featured-cars">-->
-                    <!--                            <div class="featured-img-box">-->
-                    <!--                                <div class="featured-cars-img">-->
-                    <!--                                    <img src="{% static 'assets/images/featured-cars/fc8.png' %}" alt="cars">-->
-                    <!--                                </div>-->
-                    <!--                                <div class="featured-model-info">-->
-                    <!--                                    <p>-->
-                    <!--                                        model: 2017-->
-                    <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
-                    <!--                                        <span class="featured-hp-span"> 240HP</span>-->
-                    <!--                                        automatic-->
-                    <!--                                    </p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="featured-cars-txt">-->
-                    <!--                                <h2><a href="#">BMW <span> x</span>series-6</a></h2>-->
-                    <!--                                <h3>$75,800</h3>-->
-                    <!--                                <p>-->
-                    <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
-                    <!--                                    adipisci velit, sed quia non.-->
-                    <!--                                </p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                </div>-->
-                </div>
-            </div><!--/.container-->
 
     </section>
-</div>
-<script src="{% static 'assets/js/jquery.js' %}"></script>
+    <div>
+        <section id="featured-cars" class="featured-cars">
+            <div class="container">
+                <div class="section-header">
+                    <h2>All Cars</h2>
+                </div><!--/.section-header-->
+                <div class="featured-cars-content">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-featured-cars">
+                                <div class="featured-img-box">
+                                </div>
+                                <!--                            <div class="featured-cars-txt">-->
+                                <!--                                <h2><a href="#">BMW 6-series gran coupe</a></h2>-->
+                                <!--                                <h3>$89,395</h3>-->
+                                <!--                                <p>-->
+                                <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                                <!--                                    adipisci velit, sed quia non.-->
+                                <!--                                </p>-->
+                                <!--                            </div>-->
 
-<!--modernizr.min.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+                                <div class="container">
+                                    <div class="row">
+                                        {% for i in cardata %}
+                                        <div class="col-md-4">
+                                            <div class="card">
+                                                <img src="{{i.ProductImage.url}}" class="card-img-top fixed-img-size"
+                                                    alt="{{i.ProductName}}">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{i.ProductName}}</h5>
+                                                    <!-- Uncomment the following lines if needed -->
+                                                    <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+                                                    <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                                                    <a href="{% url 'Single_Product' proid=i.id %}">
+                                                        <button type="button" class="btn btn-primary">Details</button>
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger float-right"><i
+                                                            class="fas fa-heart"></i> Favorite
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
 
-<!--bootstrap.min.js-->
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
 
-<!-- bootsnav js -->
-<script src="{% static 'assets/js/bootsnav.js' %}"></script>
+                            </div>
+                        </div>
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc2.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">chevrolet camaro <span>wmv20</span></a></h2>-->
+                        <!--                                <h3>$66,575</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc3.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">lamborghini <span>v520</span></a></h2>-->
+                        <!--                                <h3>$125,250</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc4.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">audi <span> a3</span> sedan</a></h2>-->
+                        <!--                                <h3>$95,500</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                        <!--                <div class="row">-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc4.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">infiniti <span>z5</span></a></h2>-->
+                        <!--                                <h3>$36,850</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc5.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">porsche <span>718</span> cayman</a></h2>-->
+                        <!--                                <h3>$48,500</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc7.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#"><span>bmw 8-</span>series coupe</a></h2>-->
+                        <!--                                <h3>$56,000</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-lg-3 col-md-4 col-sm-6">-->
+                        <!--                        <div class="single-featured-cars">-->
+                        <!--                            <div class="featured-img-box">-->
+                        <!--                                <div class="featured-cars-img">-->
+                        <!--                                    <img src="{% static 'assets/images/featured-cars/fc8.png' %}" alt="cars">-->
+                        <!--                                </div>-->
+                        <!--                                <div class="featured-model-info">-->
+                        <!--                                    <p>-->
+                        <!--                                        model: 2017-->
+                        <!--                                        <span class="featured-mi-span"> 3100 mi</span>-->
+                        <!--                                        <span class="featured-hp-span"> 240HP</span>-->
+                        <!--                                        automatic-->
+                        <!--                                    </p>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="featured-cars-txt">-->
+                        <!--                                <h2><a href="#">BMW <span> x</span>series-6</a></h2>-->
+                        <!--                                <h3>$75,800</h3>-->
+                        <!--                                <p>-->
+                        <!--                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,-->
+                        <!--                                    adipisci velit, sed quia non.-->
+                        <!--                                </p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                </div>-->
+                    </div>
+                </div><!--/.container-->
 
-<!--owl.carousel.js-->
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+        </section>
+    </div>
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--bootstrap.min.js-->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
 
-<!--Custom JS-->
-<script src="{% static 'assets/js/custom.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- bootsnav js -->
+    <script src="{% static 'assets/js/bootsnav.js' %}"></script>
+
+    <!--owl.carousel.js-->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!--Custom JS-->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from Backend.models import CategoryDB, ProductDB
-from WebApp.models import ContactDB, RegisterDB
+from WebApp.models import ContactDB, RegisterDB, WishlistDB
 from django.contrib import messages
 
 
@@ -96,6 +96,16 @@ def Userlogout(request):
     del request.session['Password']
     messages.warning(request, "Logged out")
     return redirect(registration_page)
+
+
+def addWishlist(request):
+    if request.method == 'POST':
+        pi = request.POST.get("productid")
+        cn = request.POST.get("carname")
+        pr = request.POST.get("price")
+        obj = WishlistDB(ProductID=pi, Carname=cn, Price=pr)
+        obj.save()
+        messages.success(request, "Successfully added to wishlist. ❤️😍")
 
 
 def wishlistpage(request):

@@ -98,7 +98,12 @@
                             <li><a href="#new-cars">new cars</a></li>
                             <li><a href="#brand">brands</a></li>
                             <li><a href="{% url 'contactpage' %}">contact</a></li>
-                            <li><a href="#">Register/login</a></li>
+                            {% if request.session.Username %}
+                                <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a>
+                                </li>
+                                {% else %}
+                                <li><a href="{% url 'registration_page' %}">Register/Login</a></li>
+                                {% endif %}
                         </ul><!--/.nav -->
                     </div><!-- /.navbar-collapse -->
                 </div><!--/.container-->

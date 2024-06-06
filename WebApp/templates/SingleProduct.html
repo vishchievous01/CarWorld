@@ -11,8 +11,8 @@
 
     <!--font-family-->
     <link
-            href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
 
@@ -20,7 +20,7 @@
     <title>CarWorld</title>
 
     <!-- For favicon png -->
-    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}"/>
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
 
     <!--font-awesome.min.css-->
     <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
@@ -58,383 +58,394 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-
         .button-like {
-          border: 2px solid #8a8a8a;
-          background-color: transparent;
-          text-decoration: none;
-          padding: 1rem;
-          position: relative;
-          vertical-align: middle;
-          text-align: center;
-          display: inline-block;
-          border-radius: 3rem;
-          color: #8a8a8a;
-          transition: all ease 0.4s;
+            border: 2px solid #8a8a8a;
+            background-color: transparent;
+            text-decoration: none;
+            padding: 1rem;
+            position: relative;
+            vertical-align: middle;
+            text-align: center;
+            display: inline-block;
+            border-radius: 3rem;
+            color: #8a8a8a;
+            transition: all ease 0.4s;
         }
 
         .button-like span {
-          margin-left: 0.5rem;
+            margin-left: 0.5rem;
         }
 
         .button-like .fa,
         .button-like span {
-          transition: all ease 0.4s;
+            transition: all ease 0.4s;
         }
 
         .button-like:focus {
-          background-color: transparent;
+            background-color: transparent;
         }
 
         .button-like:focus .fa,
         .button-like:focus span {
-          color: #8a8a8a;
+            color: #8a8a8a;
         }
 
         .button-like:hover {
-          border-color: #cc4b37;
-          background-color: transparent;
+            border-color: #cc4b37;
+            background-color: transparent;
         }
 
         .button-like:hover .fa,
         .button-like:hover span {
-          color: #cc4b37;
+            color: #cc4b37;
         }
 
         .liked {
-          background-color: #cc4b37;
-          border-color: #cc4b37;
+            background-color: #cc4b37;
+            border-color: #cc4b37;
         }
 
         .liked .fa,
         .liked span {
-          color: #fefefe;
+            color: #fefefe;
         }
 
         .liked:focus {
-          background-color: #cc4b37;
+            background-color: #cc4b37;
         }
 
         .liked:focus .fa,
         .liked:focus span {
-          color: #fefefe;
+            color: #fefefe;
         }
 
         .liked:hover {
-          background-color: #cc4b37;
-          border-color: #cc4b37;
+            background-color: #cc4b37;
+            border-color: #cc4b37;
         }
 
         .liked:hover .fa,
         .liked:hover span {
-          color: #fefefe;
+            color: #fefefe;
         }
 
-        <!--old-->
+        < !--old-->.product-container {
+            max-width: 800px;
+            max-height: 1800px;
+            margin-left: 590px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-                .product-container {
-                    max-width: 800px;
-                    max-height: 1800px;
-                    margin-left: 590px;
-                    padding: 15px;
-                    border: 1px solid #ddd;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                }
-                .product-image {
-                    width: 100%;
-                    height: auto;
-                    border-bottom: 1px solid #ddd;
-                    margin-bottom: 20px;
-                }
-                .product-details {
-                    padding: 20px;
-                }
-                .product-title {
-                    font-size: 2em;
-                    margin-bottom: 20px;
-                }
-                .product-description {
-                    font-size:medium;
-                    line-height: 1.5;
-                    margin-bottom: 20px;
-                }
-                .btn-back {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    background-color: #007bff;
-                    color: #fff;
-                    text-decoration: none;
-                    border-radius: 5px;
-                    transition: background-color 0.2s;
-                }
-                .btn-back:hover {
-                    background-color: #0056b3;
-                }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: medium;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <!--Due to some issues, the contact and about paages have bee copied indirectly from home.html and edited, consider!!-->
+
 <body>
-<!--[if lte IE 9]>
+    <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
-<!--welcome-hero start -->
-<section id="home" class="welcome-hero">
+    <!--welcome-hero start -->
+    <section id="home" class="welcome-hero">
 
-    <!-- top-area Start -->
-    <div class="top-area">
-        <div class="header-area">
-            <!-- Start Navigation -->
-            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
-                 data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+        <!-- top-area Start -->
+        <div class="top-area">
+            <div class="header-area">
+                <!-- Start Navigation -->
+                <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"
+                    data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
 
-                <div class="container">
+                    <div class="container">
 
-                    <!-- Start Header Navigation -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        <!-- Start Header Navigation -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target="#navbar-menu">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                        <a class="navbar-brand" href="{% url 'homepage' %}">CarWorld<span></span></a>
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <a class="navbar-brand" href="{% url 'homepage' %}">CarWorld<span></span></a>
 
-                    </div><!--/.navbar-header-->
-                    <!-- End Header Navigation -->
+                        </div><!--/.navbar-header-->
+                        <!-- End Header Navigation -->
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                            <li><a href="{% url 'homepage' %}">home</a></li>
-                            <li><a href="{% url 'aboutpage' %}">about</a></li>
-                            <li><a href="{% url 'carspage' %}">Latest Arrivals</a></li>
-                            <li><a href="#new-cars">new cars</a></li>
-                            <li><a href="#brand">brands</a></li>
-                            <li><a href="{% url 'contactpage' %}">contact</a></li>
-                            <li><a href="#">Register/login</a></li>
-                        </ul><!--/.nav -->
-                    </div><!-- /.navbar-collapse -->
-                </div><!--/.container-->
-            </nav><!--/nav-->
-            <!-- End Navigation -->
-        </div><!--/.header-area-->
-        <div class="clearfix"></div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                                <li><a href="{% url 'homepage' %}">home</a></li>
+                                <li><a href="{% url 'aboutpage' %}">about</a></li>
+                                <li><a href="{% url 'carspage' %}">Latest Arrivals</a></li>
+                                <li><a href="#new-cars">new cars</a></li>
+                                <li><a href="{% url 'contactpage' %}">contact</a></li>
+                                <li><a href="{% url 'wishlistpage' %}">Wishlist</a></li>
+                                {% if request.session.Username %}
+                                <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a>
+                                </li>
+                                {% else %}
+                                <li><a href="{% url 'registration_page' %}">Register/Login</a></li>
+                                {% endif %}
+                            </ul><!--/.nav -->
+                        </div><!-- /.navbar-collapse -->
+                    </div><!--/.container-->
+                </nav><!--/nav-->
+                <!-- End Navigation -->
+            </div><!--/.header-area-->
+            <div class="clearfix"></div>
 
-    </div><!-- /.top-area-->
-    <!-- top-area End -->
-    {% block content %}
-    <div class="container">
-        <div class="welcome-hero-txt">
-            <h2>{{data.ProductName}}</h2>
-            <p>
-                Scroll down
-            </p>
+        </div><!-- /.top-area-->
+        <!-- top-area End -->
+        {% block content %}
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2>{{data.ProductName}}</h2>
+                <p>
+                    Scroll down
+                </p>
 
+            </div>
         </div>
-    </div>
-</section>
-<!--new-cars start -->
-<div class="product-container">
-    <img src="{{ data.ProductImage.url }}" alt="Product Image" class="product-image">
-    <div class="product-details">
-        <h1 class="product-title">{{ data.ProductName }}</h1>
+    </section>
+    <!--new-cars start -->
+    <div class="product-container">
+        <div style="width: 950px; margin-left: 480px;">
+            <img src="{{ data.ProductImage.url }}" alt="Product Image" class="product-image">
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">{{ data.ProductName }}</h1>
 
-        <div style="margin-bottom: 25px;">
-            <a href="#">
-                <button class="button button-like">
-                <i class="fa fa-heart"></i>
-                <span>Add to wishlist</span>
-            </button>
-            </a>
+            <div style="margin-bottom: 25px;">
+                <a href="#">
+                    <button class="button button-like">
+                        <i class="fa fa-heart"></i>
+                        <span>Add to wishlist</span>
+                    </button>
+                </a>
+                <br>
+                <a style="margin-top:15px;" href="{% url 'wishlistpage' %}">
+                    <button>Show wishlist</button>
+                </a>
+
+
+            </div>
+
+            <h3>Price: ₹ {{data.Price}}</h3>
             <br>
-            <a style="margin-top:15px;" href="{% url 'wishlistpage' %}">
-                <button>Show wishlist</button>
-            </a>
-
+            <h3>Description:</h3><br>
+            <p class="product-description">{{ data.Description }}</p>
 
         </div>
-
-        <h3>Price: ₹ {{data.Price}}</h3>
-        <br>
-        <h3>Description:</h3><br>
-        <p class="product-description">{{ data.Description }}</p>
-
     </div>
-</div>
 
 
-<!--blog start -->
-<section id="blog" class="blog"></section><!--/.blog-->
-<!--blog end -->
-{% endblock %}
-<!--contact start-->
-<footer id="contact" class="contact">
-    <div class="container">
-        <div class="footer-top">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="single-footer-widget">
-                        <div class="footer-logo">
-                            <a href="index.html">carworld</a>
-                        </div>
-                        <p>
-                            Find your dream ride at CarWorld. Enjoy exceptional service and a seamless buying
-                            experience. Start your automotive journey today!
-                        </p>
-                        <div class="footer-contact">
-                            <p>info@carworld.com</p>
-                            <p>+91 7034147264</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h2>about devishnu</h2>
-                        <ul>
-                            <li><a href="{% url 'aboutpage' %}">about us</a></li>
-                            <li><a href="#">career</a></li>
-                            <li><a href="#">terms <span> of service</span></a></li>
-                            <li><a href="#">privacy policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-xs-12">
-                    <div class="single-footer-widget">
-                        <h2>top brands</h2>
-                        <div class="row">
-                            <div class="col-md-7 col-xs-6">
-                                <ul>
-                                    <li><a href="#">BMW</a></li>
-                                    <li><a href="#">lamborghini</a></li>
-                                    <li><a href="#">camaro</a></li>
-                                    <li><a href="#">audi</a></li>
-                                    <li><a href="#">infiniti</a></li>
-                                    <li><a href="#">nissan</a></li>
-                                </ul>
+    <!--blog start -->
+    <section id="blog" class="blog"></section><!--/.blog-->
+    <!--blog end -->
+    {% endblock %}
+    <!--contact start-->
+    <footer id="contact" class="contact">
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html">carworld</a>
                             </div>
-                            <div class="col-md-5 col-xs-6">
-                                <ul>
-                                    <li><a href="#">ferrari</a></li>
-                                    <li><a href="#">porsche</a></li>
-                                    <li><a href="#">land rover</a></li>
-                                    <li><a href="#">aston martin</a></li>
-                                    <li><a href="#">mersedes</a></li>
-                                    <li><a href="#">opel</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-offset-1 col-md-3 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h2>news letter</h2>
-                        <div class="footer-newsletter">
                             <p>
-                                Subscribe to get latest news update and informations
+                                Find your dream ride at CarWorld. Enjoy exceptional service and a seamless buying
+                                experience. Start your automotive journey today!
                             </p>
+                            <div class="footer-contact">
+                                <p>info@carworld.com</p>
+                                <p>+91 7034147264</p>
+                            </div>
                         </div>
-                        <div class="hm-foot-email">
-                            <div class="foot-email-box">
-                                <input type="text" class="form-control" placeholder="Add Email">
-                            </div><!--/.foot-email-box-->
-                            <div class="foot-email-subscribe">
-                                <span><i class="fa fa-arrow-right"></i></span>
-                            </div><!--/.foot-email-icon-->
-                        </div><!--/.hm-foot-email-->
+                    </div>
+                    <div class="col-md-2 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h2>about devishnu</h2>
+                            <ul>
+                                <li><a href="{% url 'aboutpage' %}">about us</a></li>
+                                <li><a href="#">career</a></li>
+                                <li><a href="#">terms <span> of service</span></a></li>
+                                <li><a href="#">privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <div class="single-footer-widget">
+                            <h2>top brands</h2>
+                            <div class="row">
+                                <div class="col-md-7 col-xs-6">
+                                    <ul>
+                                        <li><a href="#">BMW</a></li>
+                                        <li><a href="#">lamborghini</a></li>
+                                        <li><a href="#">camaro</a></li>
+                                        <li><a href="#">audi</a></li>
+                                        <li><a href="#">infiniti</a></li>
+                                        <li><a href="#">nissan</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 col-xs-6">
+                                    <ul>
+                                        <li><a href="#">ferrari</a></li>
+                                        <li><a href="#">porsche</a></li>
+                                        <li><a href="#">land rover</a></li>
+                                        <li><a href="#">aston martin</a></li>
+                                        <li><a href="#">mersedes</a></li>
+                                        <li><a href="#">opel</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-1 col-md-3 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h2>news letter</h2>
+                            <div class="footer-newsletter">
+                                <p>
+                                    Subscribe to get latest news update and informations
+                                </p>
+                            </div>
+                            <div class="hm-foot-email">
+                                <div class="foot-email-box">
+                                    <input type="text" class="form-control" placeholder="Add Email">
+                                </div><!--/.foot-email-box-->
+                                <div class="foot-email-subscribe">
+                                    <span><i class="fa fa-arrow-right"></i></span>
+                                </div><!--/.foot-email-icon-->
+                            </div><!--/.hm-foot-email-->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="row">
-                <!--                <div class="col-sm-6">-->
-                <!--                    <p>-->
-                <!--                        &copy; copyright.designed and developed by <a-->
-                <!--                            href="https://www.themesine.com/">themesine</a>.-->
-                <!--                    </p>&lt;!&ndash;/p&ndash;&gt;-->
-                <!--                </div>-->
-                <div class="col-sm-6">
-                    <div class="footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+            <div class="footer-copyright">
+                <div class="row">
+                    <!--                <div class="col-sm-6">-->
+                    <!--                    <p>-->
+                    <!--                        &copy; copyright.designed and developed by <a-->
+                    <!--                            href="https://www.themesine.com/">themesine</a>.-->
+                    <!--                    </p>&lt;!&ndash;/p&ndash;&gt;-->
+                    <!--                </div>-->
+                    <div class="col-sm-6">
+                        <div class="footer-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
                     </div>
                 </div>
+            </div><!--/.footer-copyright-->
+        </div><!--/.container-->
+
+        <div id="scroll-Top">
+            <div class="return-to-top">
+                <i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
+                    data-original-title="Back to Top" aria-hidden="true"></i>
             </div>
-        </div><!--/.footer-copyright-->
-    </div><!--/.container-->
 
-    <div id="scroll-Top">
-        <div class="return-to-top">
-            <i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
-               data-original-title="Back to Top" aria-hidden="true"></i>
-        </div>
+        </div><!--/.scroll-Top-->
 
-    </div><!--/.scroll-Top-->
-
-</footer><!--/.contact-->
-<!--contact end-->
+    </footer><!--/.contact-->
+    <!--contact end-->
 
 
-<!-- Include all js compiled plugins (below), or include individual files as needed -->
+    <!-- Include all js compiled plugins (below), or include individual files as needed -->
 
-<script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
 
-<!--modernizr.min.js-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-<!--bootstrap.min.js-->
-<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!--bootstrap.min.js-->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
 
-<!-- bootsnav js -->
-<script src="{% static 'assets/js/bootsnav.js' %}"></script>
+    <!-- bootsnav js -->
+    <script src="{% static 'assets/js/bootsnav.js' %}"></script>
 
-<!--owl.carousel.js-->
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <!--owl.carousel.js-->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-<!--Custom JS-->
-<script src="{% static 'assets/js/custom.js' %}"></script>
+    <!--Custom JS-->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
 
-<script>
-    $(document).foundation();
+    <script>
+        $(document).foundation();
 
-$(function() {
-  $('.button-like')
-    .bind('click', function(event) {
-      $(".button-like").toggleClass("liked");
-    })
-});
+        $(function () {
+            $('.button-like')
+                .bind('click', function (event) {
+                    $(".button-like").toggleClass("liked");
+                })
+        });
 
 
-</script>
+    </script>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-{% if messages %}
-{% for i in messages %}
-{% if i.tags == 'warning' %}
-<script>
-    swal('{{i}}', '', 'warning')
-</script>
-{% elif i.tags == 'error' %}
-<script>
-    swal('{{i}}', '', 'error')
-</script>
-{% elif i.tags == 'info' %}
-<script>
-    swal('{{i}}', '', 'info')
-</script>
-{% else %}
-<script>
-    swal('{{i}}', '', 'success')
-</script>
-{% endif %}
-{% endfor %}
-{% endif %}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {% if messages %}
+    {% for i in messages %}
+    {% if i.tags == 'warning' %}
+    <script>
+        swal('{{i}}', '', 'warning')
+    </script>
+    {% elif i.tags == 'error' %}
+    <script>
+        swal('{{i}}', '', 'error')
+    </script>
+    {% elif i.tags == 'info' %}
+    <script>
+        swal('{{i}}', '', 'info')
+    </script>
+    {% else %}
+    <script>
+        swal('{{i}}', '', 'success')
+    </script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
 </body>
 
 </html>
