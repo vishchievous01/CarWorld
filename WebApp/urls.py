@@ -18,5 +18,6 @@ urlpatterns = [
     path('Userlogin/', views.Userlogin, name="Userlogin"),
     path('Userlogout/', views.Userlogout, name="Userlogout"),
     path('wishlistpage/', views.wishlistpage, name="wishlistpage"),
+    path('addWishlist/<int:proid>/', views.addWishlist, name="addWishlist"),
 
 ]

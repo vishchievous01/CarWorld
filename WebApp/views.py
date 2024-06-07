@@ -106,6 +106,9 @@ def addWishlist(request):
         obj = WishlistDB(ProductID=pi, Carname=cn, Price=pr)
         obj.save()
         messages.success(request, "Successfully added to wishlist. ❤️😍")
+        return redirect(Single_Product)
+    else:
+        return render(request, "wishlist.html")
 
 
 def wishlistpage(request):

@@ -13,8 +13,8 @@ class RegisterDB(models.Model):
     Password = models.CharField(max_length=100, null=True, blank=True)
     Email = models.EmailField(max_length=100, null=True, blank=True)
 
+
 class WishlistDB(models.Model):
     ProductID = models.IntegerField(null=True, blank=True)
     Carname = models.CharField(max_length=100, null=True, blank=True)
-    Price = models.IntegerField(null=True, blank=True)
-    
+    Price = models.CharField(max_length=250, null=True, blank=True)
