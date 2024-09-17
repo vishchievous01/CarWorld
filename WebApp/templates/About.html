@@ -99,6 +99,7 @@
                             <li><a href="#brand">brands</a></li>
                             <li><a href="{% url 'contactpage' %}">contact</a></li>
                             {% if request.session.Username %}
+                            <li><a href="{% url 'wishlistpage' %}">Wishlist</a></li>
                                 <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a>
                                 </li>
                                 {% else %}

@@ -96,12 +96,12 @@
                             <li><a href="{% url 'aboutpage' %}">about</a></li>
                             <li><a href="{% url 'carspage' %}">Latest Arrivals</a></li>
                             <li><a href="#new-cars">new cars</a></li>
-                            <li><a href="#brand">brands</a></li>
                             <li><a href="{% url 'contactpage' %}">contact</a></li>
                             {% if request.session.Username %}
+                            <li><a href="{% url 'wishlistpage' %}">Wishlist</a></li>
                             <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a></li>
                             {% else %}
-                            <li><a href="{% url 'registration_page' %}">Register/Login</a></li>
+                            <li><a href="{% url 'registration_page'     %}">Register/Login</a></li>
                             {% endif %}
                         </ul><!--/.nav -->
                     </div><!-- /.navbar-collapse -->
@@ -831,25 +831,25 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>
-                        &copy; copyright.designed and developed by <a
-                            href="https://www.themesine.com/">themesine</a>.
-                    </p><!--/p-->
-                </div>
-                <div class="col-sm-6">
-                    <div class="footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div><!--/.footer-copyright-->
+<!--        <div class="footer-copyright">-->
+<!--            <div class="row">-->
+<!--                <div class="col-sm-6">-->
+<!--                    <p>-->
+<!--                        &copy; copyright.designed and developed by <a-->
+<!--                            href="https://www.themesine.com/">themesine</a>.-->
+<!--                    </p>&lt;!&ndash;/p&ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="col-sm-6">-->
+<!--                    <div class="footer-social">-->
+<!--                        <a href="#"><i class="fa fa-facebook"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-instagram"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-linkedin"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-pinterest-p"></i></a>-->
+<!--                        <a href="#"><i class="fa fa-behance"></i></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>&lt;!&ndash;/.footer-copyright&ndash;&gt;-->
     </div><!--/.container-->
 
     <div id="scroll-Top">

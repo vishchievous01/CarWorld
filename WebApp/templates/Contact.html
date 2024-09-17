@@ -95,10 +95,10 @@
                             <li><a href="{% url 'homepage' %}">home</a></li>
                             <li><a href="{% url 'aboutpage' %}">about</a></li>
                             <li><a href="{% url 'carspage' %}">Latest Arrivals</a></li>
-                            <li><a href="#new-cars">new cars</a></li>
                             <li><a href="#brand">brands</a></li>
                             <li class="scroll active"><a href="{% url 'contactpage' %}">contact</a></li>
                             {% if request.session.Username %}
+                            <li><a href="{% url 'wishlistpage' %}">Wishlist</a></li>
                             <li><a href="{% url 'Userlogout' %}">Welcome {{request.session.Username}} /Logout</a></li>
                             {% else %}
                             <li><a href="{% url 'registration_page' %}">Register/Login</a></li>
@@ -127,7 +127,7 @@
 <!--new-cars start -->
 <section id="new-cars" class="new-cars">
     <div class="content">
-<br><br><br>
+        <br><br><br>
         <div class="container">
             <div class="row">
                 <div class="col-md-5 mr-auto">
@@ -157,7 +157,8 @@
                 </div>
 
                 <div class="col-md-6">
-                    <form class="mb-5" method="post" action="{% url 'contactsave' %}" id="contactForm">
+                    <form class="mb-5" method="post" action="{% url 'contactsave' %}" id="contactForm"
+                          enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
 
@@ -180,9 +181,9 @@
                                           rows="7"></textarea>
                             </div>
                         </div>
-
+                        <button type="submit">Send Message</button>
                     </form>
-                    <button type="submit">Send Message</button>
+
 
                     <div id="form-message-warning mt-4"></div>
                     <!--                    <div id="form-message-success">-->
@@ -191,7 +192,7 @@
                 </div>
             </div>
         </div>
-<br><br><br>
+        <br><br><br>
 </section>
 
 <!--blog start -->

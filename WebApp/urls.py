@@ -18,6 +18,10 @@ urlpatterns = [
     path('Userlogin/', views.Userlogin, name="Userlogin"),
     path('Userlogout/', views.Userlogout, name="Userlogout"),
     path('wishlistpage/', views.wishlistpage, name="wishlistpage"),
-    path('addWishlist/<int:proid>/', views.addWishlist, name="addWishlist"),
+    path('addWishlist/', views.addWishlist, name='addWishlist'),
+    path('delete_item/<int:p_id>/', views.delete_item, name="delete_item"),
+    path('checkoutpage/', views.checkoutpage, name="checkoutpage"),
+    path('paymentpage/', views.paymentpage, name="paymentpage"),
+    path('saveorder/', views.saveorder, name="saveorder"),
 
 ]

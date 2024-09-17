@@ -252,8 +252,9 @@
         <h1 class="product-title">{{ data.ProductName }}</h1>
 
         <div style="margin-bottom: 25px;">
-            <form action="{% url 'addWishlist' proid=data.id %}" method="POST">
+            <form action="{% url 'addWishlist' %}" method="POST">
                 {% csrf_token %}
+                <input type="hidden" name="username" value="{{ request.session.Username }}" readonly>
                 <input type="hidden" name="productid" value="{{ data.id }}">
                 <input type="hidden" name="carname" value="{{ data.ProductName }}">
                 <input type="hidden" name="price" value=" {{ data.Price }}">
@@ -268,7 +269,7 @@
         </div>
 
         <h3>Price: ₹ {{data.Price}}</h3>
-        <br>
+        <hr>
         <h3>Description:</h3><br>
         <p class="product-description">{{ data.Description }}</p>
 

@@ -7,7 +7,6 @@ class CategoryDB(models.Model):
     Description = models.TextField(null=True, blank=True)
     CategoryImage = models.ImageField(upload_to="Category Images", null=True, blank=True)
 
-
 class ProductDB(models.Model):
     Category = models.CharField(max_length=100, null=True, blank=True)
     ProductName = models.CharField(max_length=100, null=True, blank=True)
